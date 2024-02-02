@@ -352,6 +352,8 @@ class DiscordInteractions(DiscordInteractionsBlueprint):
             data={
                 "grant_type": "client_credentials",
                 "scope": app.config["DISCORD_SCOPE"],
+                "client_id": app.config["DISCORD_CLIENT_ID"],
+                "client_secret": app.config["DISCORD_CLIENT_SECRET"]
             },
             headers={"Content-Type": "application/x-www-form-urlencoded"},
             auth=(app.config["DISCORD_CLIENT_ID"], app.config["DISCORD_CLIENT_SECRET"]),
